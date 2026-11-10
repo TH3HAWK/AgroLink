@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroLink - Gestão Estratégica para Agricultura Familiar</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Leaflet CSS (Mapa) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        agroGreen: '#1a5928', /* Verde Folha */
+                        agroBrown: '#6b4423', /* Marrom Terra */
+                        wppGreen: '#25D366'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <img src="logo_agrolink.png" alt="Logotipo da AgroLink" class="h-16">
+            <nav class="hidden md:flex space-x-6 text-agroGreen font-semibold">
+                <a href="#funcionalidades">Funcionalidades</a>
+                <a href="#planos">Planos</a>
+                <a href="#mapa-contato">Contato e Região</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-agroGreen text-white py-20 text-center px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Conectando o produtor ao futuro</h1>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">Plataforma tecnológica mobile e web voltada para a gestão agrícola da agricultura familiar. Controle seus custos e tenha clareza do seu lucro por hectare.</p>
+        <a href="#mapa-contato" class="bg-agroBrown hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full transition-all">Falar com um Consultor</a>
+    </section>
+
+    <!-- Funcionalidades -->
+    <section id="funcionalidades" class="py-16 max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-agroBrown mb-10">Tudo para sua Lavoura</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow border-t-4 border-agroGreen">
+                <h3 class="font-bold text-xl mb-2 text-agroGreen">Modo Offline-First</h3>
+                <p>O aplicativo garante operação contínua mesmo em zonas de sombra de conectividade na zona rural de Coxim.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow border-t-4 border-agroGreen">
+                <h3 class="font-bold text-xl mb-2 text-agroGreen">Métricas Automatizadas</h3>
+                <p>Controle de estoque integrado e visualização gráfica instantânea do custo operacional e margem de lucro por hectare.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow border-t-4 border-agroGreen">
+                <h3 class="font-bold text-xl mb-2 text-agroGreen">Suporte Hiperlocalizado</h3>
+                <p>Consultoria presencial, implantação in loco e adequação de termos complexos para jargões cotidianos da roça.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos de Assinatura -->
+    <section id="planos" class="bg-gray-100 py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-agroBrown mb-10">Nossos Planos</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Semente -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold text-agroGreen mb-4">Semente</h3>
+                    <p class="text-4xl font-bold mb-6">Grátis</p>
+                    <ul class="space-y-3 mb-8 text-gray-600">
+                        <li>✓ 1 Propriedade</li>
+                        <li>✓ Até 3 Talhões</li>
+                        <li>✓ Caderno de campo e Modo Offline</li>
+                    </ul>
+                </div>
+                <!-- Produtor -->
+                <div class="bg-agroGreen text-white p-8 rounded-xl shadow-2xl transform scale-105">
+                    <h3 class="text-2xl font-bold mb-4">Produtor</h3>
+                    <p class="text-4xl font-bold mb-6">R$ 29,90<span class="text-sm font-normal">/mês</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li>✓ Talhões Ilimitados</li>
+                        <li>✓ Estoque de Insumos</li>
+                        <li>✓ Relatório de Custo e Lucro/ha</li>
+                    </ul>
+                </div>
+                <!-- Família -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold text-agroGreen mb-4">Família</h3>
+                    <p class="text-4xl font-bold mb-6">R$ 49,90<span class="text-sm font-normal">/mês</span></p>
+                    <ul class="space-y-3 mb-8 text-gray-600">
+                        <li>✓ Até 3 Propriedades</li>
+                        <li>✓ Até 4 Usuários Simultâneos</li>
+                        <li>✓ Módulo de Gado Leiteiro</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa e Contato -->
+    <section id="mapa-contato" class="py-16 max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12">
+        <div>
+            <h2 class="text-3xl font-bold text-agroBrown mb-6">Nossa Área de Atuação</h2>
+            <p class="mb-4 text-gray-700">Com foco inicial em Coxim-MS e região norte do estado, prestamos atendimento direto na sua propriedade.</p>
+            <div id="map" class="h-80 w-full rounded-lg shadow-md z-0"></div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold text-agroGreen mb-6">Agende uma Visita Técnica</h2>
+            <form id="whatsappForm" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-1">Nome do Produtor</label>
+                    <input type="text" id="nome" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-agroGreen">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-1">Tamanho da Propriedade (Hectares)</label>
+                    <input type="number" id="hectares" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-agroGreen">
+                </div>
+                <button type="submit" class="w-full flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl text-white bg-wppGreen shadow-lg shadow-wppGreen/40">
+                    Chamar no WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
