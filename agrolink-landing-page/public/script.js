@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const hectares = document.getElementById('hectares').value;
         
         // Número de exemplo da equipe de suporte/comercial
-        const telefone = "5567999999999"; 
+        const telefone = "5567998007188"; 
         
         const mensagem = `Olá, equipe AgroLink! Meu nome é ${nome}. Tenho uma propriedade de ${hectares} hectares na região e gostaria de agendar uma implantação presencial e conhecer o aplicativo.`;
         
